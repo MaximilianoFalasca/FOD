@@ -1,0 +1,12 @@
+Codigo: 12 Precio:  2.0000000000000000E+003 Marca: arara
+ Stock Disponible: 10 Stock Minimo: 20 Descripcion: adada
+ Producto: cucki
+Codigo: 15 Precio:  2.0000000000000000E+001 Marca: ye
+ Stock Disponible: 30 Stock Minimo: 20 Descripcion: re
+ Producto: te
+Codigo: 4 Precio:  2.3000000000000000E+001 Marca: ge
+ Stock Disponible: 32 Stock Minimo: 54 Descripcion: re
+ Producto: te
+Codigo: 9 Precio:  4.0000000000000000E+000 Marca: ii
+ Stock Disponible: 0 Stock Minimo: 4 Descripcion: oo
+ Producto: pp
