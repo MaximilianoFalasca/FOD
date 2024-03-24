@@ -1,4 +1,6 @@
 program ej1;
+const 
+	valorAlto=9999;
 
 type
   comision = record
@@ -8,9 +10,9 @@ type
   end;
 
   descripcion = file of comision;
-
 var
   arc_desc: descripcion;
+  arc_maes: descripcion;
 
 procedure insertarOrdenado(var arc_desc: descripcion; emp: comision);
 var
@@ -71,9 +73,44 @@ begin
   close(arc_desc);
 end;
 
+procedure leer(var arc_desc:descripcion;var dato:comision);
+begin
+	if not eof(arc_desc) then 
+		read(arc_desc,dato)
+	else
+		dato.cod:=valorAlto;
+end;
+
+procedure comprimirArc(var arc_maes:descripcion;var arc_desc:descripcion);
+var
+	emp:comision;
+	total:real;
+	num:integer;
+begin
+	reset(arc_desc);
+	rewrite(arc_maes);
+	leer(arc_desc,emp);
+	total:=0;
+	while (emp.cod<>valorAlto) do begin
+		writeln('Codigo:',emp.cod);
+		num:=emp.cod;
+		while (emp.cod=num) do begin
+			total:=total+emp.monto;
+			leer(arc_desc,emp);
+		end;
+	end;
+	close(arc_maes);
+	close(arc_desc);
+end;
+
 begin
   assign(arc_desc, 'descripcion_ej1.dat');
+  assign(arc_maes, 'maestro_ej1.dat');
   crearArcDesc(arc_desc);
   writeln('Datos ingresados:');
   imprimirArc(arc_desc);
+  writeln('Comprimiendo..');
+  comprimirArc(arc_desc,arc_maes);
+  writeln('Archivos comprimidos..');
+  imprimirArc(arc_maes);
 end.
