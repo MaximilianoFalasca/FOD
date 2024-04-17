@@ -166,6 +166,7 @@ begin
 			read(m,mae);
 		writeln('b');
 		while((min.codigoPcia<>valorAlto)and(mae.codigoPcia=min.codigoPcia))do begin
+			//falta discernir entre localidades
 			writeln('mae.viviendasLuz:',mae.viviendasLuz);
 			mae.viviendasLuz:=mae.viviendasLuz-min.viviendasLuz;
 			writeln('mae.viviendasLuz:',mae.viviendasLuz);
