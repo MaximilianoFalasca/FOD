@@ -25,7 +25,7 @@ type
 	end;
 	tArchFlores = file of reg_flor;
 
-procedure CrearArchivo(var a: tArchFlor);
+procedure CrearArchivo(var a: tArchFlores);
 
 procedure leerFlor(var f:reg_flor);
 begin
@@ -41,7 +41,7 @@ var
 	r:reg_flor;
 begin
 	rewrite(a);
-	r.codigo=0;
+	r.codigo:=0;
 	write(a,r);
 	writeln('Ingrese datos hasta codigo<=0');
 	leerFlor(r);
@@ -94,6 +94,7 @@ var
 	ok:boolean;
 	codigo:integer;
 begin
+	ok:=false;
 	reset(a);
 	writeln('Ingresar el codigo de la flor a eliminar: ');
 	readln(codigo);
@@ -103,7 +104,7 @@ begin
 		if(aux.codigo=codigo)then begin
 			seek(a,filePos(a)-1);
 			write(a,r);
-			aux.codigo=(filePos(a)-1)*-1;
+			aux.codigo:=(filePos(a)-1)*-1;
 			seek(a,0);
 			write(a,aux);
 		end;
@@ -139,5 +140,6 @@ begin
 			0:writeln('Terminando la ejecucion del programa...');
 		else
 			writeln('Opcion no valida, ingrese nuevamente');
+		end;
 	until(opcion=0);
 end.
