@@ -122,6 +122,7 @@ begin
             2: modificarNovela(a);
             3: eliminarNovela(a);
             0: writeln('Terminando la ejecucion del proceso...');
+        end;
         else
             writeln('Opcion no valida, ingrese nuevamente');
     until (opcion=0);
