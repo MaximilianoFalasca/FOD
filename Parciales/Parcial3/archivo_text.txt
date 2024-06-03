@@ -1,0 +1,5 @@
+2 p re 999 tarjeta
+3 d f 54 tarjeta
+5 d f 44 contado
+8 p p 8 contado
+9999 p p 8 contado
